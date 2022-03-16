@@ -16,14 +16,15 @@ export function mover(almacenInicial: number, producto: number, cantidad: number
     }else{
         let i: number = 0
         let j: number = 0
+        //2,2,100,1
         while (i < Almacenes[almacenInicial-1].contieneDetalleProductos.length){
             if (Productos[producto-1].id == Almacenes[almacenInicial-1].contieneDetalleProductos[i].perteneceProducto.id){
-
                 while (j < Almacenes[almacenFinal-1].contieneDetalleProductos.length){
 
-                    if (Productos[producto-1].id == Almacenes[almacenFinal-1].contieneDetalleProductos[i].perteneceProducto.id){
-                        Almacenes[almacenInicial-1].contieneDetalleProductos[i].cantidad = Almacenes[almacenInicial-1].contieneDetalleProductos[i].cantidad - cantidad
-                        Almacenes[almacenFinal-1].contieneDetalleProductos[i].cantidad = Almacenes[almacenFinal-1].contieneDetalleProductos[i].cantidad + cantidad
+                    if (Productos[producto-1].id == Almacenes[almacenFinal-1].contieneDetalleProductos[j].perteneceProducto.id){
+                        Almacenes[
+                            almacenInicial-1].contieneDetalleProductos[i].cantidad = Almacenes[almacenInicial-1].contieneDetalleProductos[i].cantidad - cantidad
+                        Almacenes[almacenFinal-1].contieneDetalleProductos[j].cantidad = Almacenes[almacenFinal-1].contieneDetalleProductos[j].cantidad + cantidad
                         
                         console.log("Se han movido "+cantidad+" de "+Productos[producto-1].nombre+" del almacén "+Almacenes[almacenInicial-1].id+" al almacén "+Almacenes[almacenFinal-1].id)
                         j = Almacenes[almacenFinal-1].contieneDetalleProductos.length
